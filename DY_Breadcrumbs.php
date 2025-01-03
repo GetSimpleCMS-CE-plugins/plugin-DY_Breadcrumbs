@@ -21,7 +21,7 @@ register_plugin(
 /* 
  * Simple usage:
  * 
- * <ul itemscope itemtype="http://schema.org/BreadcrumbList">
+ * <ul itemscope itemtype="https://schema.org/BreadcrumbList">
  * 		<?php dyGetBreadcrumbs(get_page_slug(false)); ?>
  * </ul>
  * 
@@ -38,7 +38,7 @@ function dyGetBreadcrumbs($slug, $home = true, $homeTitle = false, $parentTitleL
 			if ($slug == 'index') {
 				if ($useMicrodata) {
 					echo '
-		<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">',
+		<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">',
 			'<span itemprop="name">', htmlspecialchars($homeTitle, ENT_QUOTES, 'UTF-8'), '</span><meta itemprop="position" content="1" />
 		</li>';
 				} else {
@@ -49,7 +49,7 @@ function dyGetBreadcrumbs($slug, $home = true, $homeTitle = false, $parentTitleL
 					if ($useMicrodata) {
 						$count = 1;
 						echo '
-		<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">',
+		<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">',
 			'<a itemprop="item" href="', find_url('index', ''), '"><span itemprop="name">', htmlspecialchars($homeTitle, ENT_QUOTES, 'UTF-8'), '</span></a><meta itemprop="position" content="', $count, '" />
 		</li>';
 						$count++;
@@ -79,7 +79,7 @@ function dyGetBreadcrumbs($slug, $home = true, $homeTitle = false, $parentTitleL
 				}
 				if ($useMicrodata) {
 					echo '
-		<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">',
+		<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">',
 		   '<a itemprop="item" href="', find_url($item, $parent), '"><span itemprop="name">', htmlspecialchars($title, ENT_QUOTES, 'UTF-8'),'</span></a><meta itemprop="position" content="', $count, '" />
 		</li>';
 					$count++;
@@ -101,7 +101,7 @@ function dyGetBreadcrumbs($slug, $home = true, $homeTitle = false, $parentTitleL
 			}
 			if ($useMicrodata) {
 				echo '
-		<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="current active"><span itemprop="name">', htmlspecialchars($title, ENT_QUOTES, 'UTF-8'),'</span><meta itemprop="position" content="', $count, '" /></li>';
+		<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="current active"><span itemprop="name">', htmlspecialchars($title, ENT_QUOTES, 'UTF-8'),'</span><meta itemprop="position" content="', $count, '" /></li>';
 			} else {
 				echo '
 		<li class="current active">', htmlspecialchars($title, ENT_QUOTES, 'UTF-8'), '</li>';
